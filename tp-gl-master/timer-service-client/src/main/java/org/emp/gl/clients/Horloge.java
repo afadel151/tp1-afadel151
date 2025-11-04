@@ -14,6 +14,11 @@ public class Horloge implements TimerChangeListener {
         this.name = name ; 
         this.timerService = timerService;
         System.out.println ("Horloge "+name+" initialized! with timer service") ;
+        init();
+    }
+
+    private void init() {
+        this.timerService.addTimeChangeListener(this);
     }
 
     public void afficherHeure () {
