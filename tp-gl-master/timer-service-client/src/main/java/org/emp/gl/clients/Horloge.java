@@ -32,17 +32,8 @@ public class Horloge implements TimerChangeListener {
     @Override
     public void propertyChange(String prop, Object oldValue, Object newValue){
         switch (prop) {
-            case DIXEME_DE_SECONDE_PROP:
-                System.out.println("Dixième de seconde changed from " + oldValue + " to " + newValue);
-                break;
             case SECONDE_PROP:
-                System.out.println("Seconde changed from " + oldValue + " to " + newValue);
-                break;
-            case MINUTE_PROP:
-                System.out.println("Minute changed from " + oldValue + " to " + newValue);
-                break;
-            case HEURE_PROP:
-                System.out.println("Heure changed from " + oldValue + " to " + newValue);
+                this.afficherHeure();
                 break;
             default:
                 break;
