@@ -1,5 +1,7 @@
 package org.emp.gl.core.launcher;
 
+import java.util.Random;
+
 import org.emp.gl.clients.CompteARebours;
 import org.emp.gl.clients.Horloge ;
 import org.emp.gl.time.service.impl.DummyTimeServiceImpl;
@@ -17,11 +19,15 @@ public class App {
 
     private static void testDuTimeServiceCompteur(TimerService Service)
     {
-        CompteARebours compteur = new CompteARebours(5,Service);
-        CompteARebours compteur2 = new CompteARebours(5,Service);
-        CompteARebours compteur3 = new CompteARebours(5,Service);
-        CompteARebours compteur4 = new CompteARebours(5,Service);
-        CompteARebours compteur5 = new CompteARebours(5,Service);
+        Random random = new Random();
+        int min = 10;
+        int max = 20;
+
+        CompteARebours compteur = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
+        CompteARebours compteur2 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
+        CompteARebours compteur3 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
+        CompteARebours compteur4 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
+        CompteARebours compteur5 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
         Service.addTimeChangeListener(compteur);
         Service.addTimeChangeListener(compteur2);
         Service.addTimeChangeListener(compteur3);
