@@ -23,16 +23,10 @@ public class App {
         int min = 10;
         int max = 20;
 
-        CompteARebours compteur = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
-        CompteARebours compteur2 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
-        CompteARebours compteur3 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
-        CompteARebours compteur4 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
-        CompteARebours compteur5 = new CompteARebours(random.nextInt(max - min + 1) + min,Service);
-        Service.addTimeChangeListener(compteur);
-        Service.addTimeChangeListener(compteur2);
-        Service.addTimeChangeListener(compteur3);
-        Service.addTimeChangeListener(compteur4);
-        Service.addTimeChangeListener(compteur5);
+        for (int index = 0; index < 10; index++) {
+            CompteARebours compteur = new CompteARebours(random.nextInt(max - min + 1) + min, Service);
+            Service.addTimeChangeListener(compteur);
+        }
         ((DummyTimeServiceImpl) Service).setMinutes(4);
     }
 
