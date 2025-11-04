@@ -18,8 +18,7 @@ import org.emp.gl.timer.service.TimerService;
  *
  * @author tina
  */
-public class DummyTimeServiceImpl
-        implements TimerService {
+public class DummyTimeServiceImpl implements TimerService {
 
     int dixiemeDeSeconde;
     int minutes;
