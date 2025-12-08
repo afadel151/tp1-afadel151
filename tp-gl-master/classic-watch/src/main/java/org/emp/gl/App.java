@@ -1,4 +1,4 @@
-package org.emp;
+package org.emp.gl;
 
 /**
  * Hello world!

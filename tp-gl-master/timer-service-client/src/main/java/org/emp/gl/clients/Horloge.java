@@ -14,8 +14,10 @@ public class Horloge implements TimerChangeListener {
         Lookup lookup = Lookup.getInstance();
         this.name = name;
         this.timerService = (TimerService)lookup.getService(TimerService.class);
-        System.out.println("Horloge " + name + " initialized! with timer service");
-        init();
+        if (this.timerService != null) {
+            System.out.println("Horloge " + name + " initialized! with timer service");
+            init();
+        }
     }
 
     private void init() {
@@ -31,16 +33,7 @@ public class Horloge implements TimerChangeListener {
         }
     }
     
-    // @Override
-    // public void propertyChange(String prop, Object oldValue, Object newValue){
-    //     switch (prop) {
-    //         case SECONDE_PROP:
-    //             this.afficherHeure();
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }   
+   
     @Override
     public  void propertyChange(PropertyChangeEvent event)
     {

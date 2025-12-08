@@ -27,5 +27,6 @@
     <module>timer-service-client</module>
     <module>gui</module>
     <module>lookup_module</module>
+    <module>classic-watch</module>
   </modules>
 </project>

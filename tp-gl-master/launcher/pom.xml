@@ -50,6 +50,12 @@
     </dependency>
     <dependency>
       <groupId>org.emp.gl</groupId>
+      <artifactId>classic-watch</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.emp.gl</groupId>
       <artifactId>gui</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
