@@ -23,6 +23,7 @@ public class App {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 WatchViewer w = new WatchViewer();
+                Service.addTimeChangeListener(w);
             }
         });
     }

@@ -46,6 +46,12 @@
       <version>0.0.1</version>
       <type>jar</type>
     </dependency>
+    <dependency>
+      <groupId>org.emp</groupId>
+      <artifactId>lookup_module</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
     <!-- Optionally: parameterized tests support -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>

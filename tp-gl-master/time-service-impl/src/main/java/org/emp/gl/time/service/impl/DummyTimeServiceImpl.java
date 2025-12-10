@@ -99,11 +99,6 @@
         }
 
         private void secondesChanged(int oldValue, int secondes) {
-
-        //    for (TimerChangeListener l : listeners) {
-        //        l.propertyChange(TimerChangeListener.SECONDE_PROP,
-        //                oldValue, secondes);
-        //    }
             support.firePropertyChange(TimerChangeListener.SECONDE_PROP,oldValue,secondes);
 
         }
