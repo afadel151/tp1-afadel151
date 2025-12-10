@@ -27,7 +27,7 @@ public class ChronometerState implements WatchState {
             c.reset();
             updateDisplay();
         } else {
-            watchViewer.setState(new HHmmState(watchViewer));
+            watchViewer.setState(new SettingsState(watchViewer));
             watchViewer.updateDisplay();
         }
     }

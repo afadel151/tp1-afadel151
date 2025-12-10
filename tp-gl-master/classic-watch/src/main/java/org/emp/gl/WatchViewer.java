@@ -7,6 +7,7 @@ import java.awt.*;
 import java.beans.PropertyChangeEvent;
 
 import javax.swing.*;
+
 public class WatchViewer extends JFrame implements TimerChangeListener{
     static int COUNT = 0;
     private WatchState state;
@@ -22,7 +23,7 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
 
     public WatchViewer() {
         chrono = new Chronometer();
-        
+
         initComponents();
     }
 
@@ -79,7 +80,6 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
     }
 
     public void doMode() {
-        // System.out.println(" MODE ");
         state.onMode();
     }
 
@@ -115,7 +115,9 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
     @Override 
     public void propertyChange(PropertyChangeEvent event)
     {
-        ticHappened();
+        if (! (this.state instanceof SettingsState)) {
+            ticHappened();
+        }
     }
 
     public void updateDisplay()
