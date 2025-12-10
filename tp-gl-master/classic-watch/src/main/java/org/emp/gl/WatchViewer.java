@@ -22,6 +22,7 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
 
     public WatchViewer() {
         chrono = new Chronometer();
+        
         initComponents();
     }
 
@@ -30,7 +31,9 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
     }
     private void initComponents() {
         state = new HHmmState(this);
+        state.updateDisplay();
         buttonViewer = new ButtonViewer(this);
+
         setTitle("Watch Viewer");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocation(200 + COUNT++ * 300, 400);
@@ -76,23 +79,13 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
     }
 
     public void doMode() {
-        System.out.println(" MODE ");
+        // System.out.println(" MODE ");
         state.onMode();
     }
 
     public void ticHappened() 
     {
-        System.out.println("TIC - HAPPENED ");
-        int h = horloge.getHours();
-        int m = horloge.getMinutes();
-    
-        setTextPosition1(String.format("%02d", h));
-        setTextPosition2(String.format("%02d", m));
-    
-        if (sep.getText().equals(":"))
-            setTextSeparator(" ");
-        else
-            setTextSeparator(":");
+        state.updateDisplay();
     }
 
     public void setTextPosition1(String txt) {
@@ -123,5 +116,10 @@ public class WatchViewer extends JFrame implements TimerChangeListener{
     public void propertyChange(PropertyChangeEvent event)
     {
         ticHappened();
+    }
+
+    public void updateDisplay()
+    {
+        state.updateDisplay();
     }
 }
