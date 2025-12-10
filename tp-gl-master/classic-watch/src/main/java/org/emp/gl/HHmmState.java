@@ -8,9 +8,10 @@ public class HHmmState implements WatchState{
         this.watchViewer = v;
     }
     public void onSet() {
-        updateDisplay();
         watchViewer.setState(new SecondsState(watchViewer));
+        watchViewer.updateDisplay();
     }
+    
     public void onMode() {
         watchViewer.setState(new ChronometerState(watchViewer));
     }
